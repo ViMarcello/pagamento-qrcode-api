@@ -19,3 +19,9 @@ def gerar_qrcode():
     img_base64 = base64.b64encode(buffer.getvalue()).decode("utf-8")
 
     return jsonify({"qrcode_base64": img_base64})
+
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
